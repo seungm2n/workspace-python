@@ -27,8 +27,12 @@ print('d : ', d[0:3])
 print('d : ', d[2:])
 print('e : ', e[2][1:3])
 
-
 # 연산
 print()
 print('c + d : ', c + d)
 print('c * 3 : ', c * 3)
+
+#수정, 삭제
+print()
+c[0] = 4
+print('c : ', c)
