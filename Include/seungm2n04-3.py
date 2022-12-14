@@ -153,4 +153,3 @@ print(data)
 
 data = data1 - data2      # 차집합
 print(data)
-
