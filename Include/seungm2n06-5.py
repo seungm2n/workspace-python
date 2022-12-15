@@ -78,3 +78,11 @@ soccer_team2 = [name for name, height in candidates.items() if height >= 175]
 print(soccer_team2)
 
 # 구구단 출력(for문)
+for num2 in range(1, 10):
+    for num1 in range(2, 10):
+        print("{} x {} = {}".format(num1, num2, num1*num2), end="\t")
+    print()
+
+print()
+# 구구단 가로 출력 (while 문)
+while
