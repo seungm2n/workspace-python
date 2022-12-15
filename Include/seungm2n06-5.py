@@ -11,6 +11,7 @@
         - 중복 데이터 삭제 (duplicated(), drop_duplicates())
         
 '''
+import time
 import pandas as pd
 
 df = pd.DataFrame()
@@ -85,4 +86,105 @@ for num2 in range(1, 10):
 
 print()
 # 구구단 가로 출력 (while 문)
-while
+num2 = 1
+while num2 < 10:
+    num1 = 2
+    while num1 < 10:
+        print("{} x {} = {}".format(num1, num2, num1*num2), end="\t")
+        num1 += 1
+    print()
+    num2 += 1
+
+print()
+'''
+    얼마나 시간이 걸리고 갯수가 몇개인지 확인하시오.
+    - for문을 이용하여 1부터 1000000까지의 숫자 중에서 3의 배수인 숫자들을 찾고,
+    몇 개가 있는지 알아보시오.
+    - 이 코드를 수행하는데 걸린 시간을 확인해보시오.
+'''
+start = time.time()
+
+ls = []
+for num in range(1, 1000001):
+    if num % 3 == 0:
+        ls.append(num)
+
+end = time.time()
+print(f"소요 시간 : {end - start}")
+print(f"리스트 원소 갯수 : {len(ls)}개")
+print()
+# 앞서 구구단은 얼마나 시간이 걸릴까요?
+# 구구단 출력(for문)
+start1 = time.time()
+for num2 in range(1, 10):
+    for num1 in range(2, 10):
+        print("{} x {} = {}".format(num1, num2, num1*num2), end="\t")
+    print()
+end1 = time.time()
+print(f"소요 시간 : {end1 - start1}")
+print()
+
+# 구구단 가로 출력 (while 문)
+start2 = time.time()
+num2 = 1
+while num2 < 10:
+    num1 = 2
+    while num1 < 10:
+        print("{} x {} = {}".format(num1, num2, num1*num2), end="\t")
+        num1 += 1
+    print()
+    num2 += 1
+end2 = time.time()
+print(f"소요 시간 : {end2 - start2}")
+
+print()
+'''
+    도준이가 5000원 이상 소지하고 있을 경우 택시를 타고 집에 귀가 할 수 있지만,
+    걸어서 귀가할 수도 있습니다.
+    택시를 탈 경우, 3000원이 소비됩니다. 잔액을 표시하시오.
+
+    2000원 이상 있을 경우 버스를 타고 귀가할 수 있습니다.
+    버스를 탈 경우, 1000원이 소비됩니다. 잔액을 표시하시오.
+
+    2000원 미만일 경우 걸어서 귀가할 수 있습니다.
+    위 조건을 반영하는 코드를 작성하시오.
+'''
+money = 1000
+taxi = True
+if money >= 5000:
+    if taxi:
+        print("택시를 탑니다.")
+        print(f"잔액 : {money - 3000}원")
+    else:
+        print("걸어서 귀가합니다.")
+elif money >= 2000:
+    print("버스를 탑니다.")
+    print(f"잔액 : {money-1000}원")
+else:
+    print("걸어서 귀가합니다.")
+
+print()
+'''
+    진도준이가 택시에 내려서 걸어서 귀가하던 중,
+    집 근처 오락실에서 '철권'이라는 게임을 하고 싶어졌습니다.
+    회당 500원인 이 게임을 몇 번이나 할 수 있을까요?
+    매번 게임을 진행한 뒤 도준이가 가지고 있는 잔액과 몇 번 게임을 했는지 횟수를
+    출력하는 코드를 작성하시오.
+
+    현재까지의 게임한 횟수 : {}
+    현재 잔액 : {}
+
+    최종 게임 횟수 : {}
+    최종 잔액 : {}
+'''
+money = 7000
+counts = 0
+while money > 0:
+    counts += 1
+    money -= 500
+    print(f"현재까지의 게임한 횟수 : {counts}")
+    print(f"현재 잔액 : {money}")
+
+print()
+print(f"최종 게임 횟수 : {counts}")
+print(f"최종 잔액 : {money}")
