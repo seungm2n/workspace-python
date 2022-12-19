@@ -1,4 +1,4 @@
-# ezen01
+# seungm2n01
 # 파이썬 작업 환경 설정
 '''
   python -m venv 가상환경이름
