@@ -23,4 +23,17 @@ source = requests.get(page_url).text
 #beautifulsoup4(bs4)를 불러옴
 import bs4
 source = bs4.BeautifulSoup(source)
-print(source)
+#print(source)
+
+# preetify() 함수는 HTML source를 tab을 기준으로 예쁘게 보여줌
+#source = source.prettify()
+# print(source)
+
+# 찾고 싶은 데이터 : 검사 기능을 통해서 td class = "number_1"에 있는 것을 확인함.
+# td tag를 찾아서, class가 number_1인 데이터를 모두 가져오면 체결가를 가져옴
+# web crawling : HTML source내에 숨어있는 데이터가 속한 tag에서 데이터를 추출하는 작업이다.
+
+# find_all() : HTML_source에서 조건을 만족하는 모든 tag를 가져오는 함수
+
+result = source.find_all('td', class_ = 'number_1')
+print(result)
