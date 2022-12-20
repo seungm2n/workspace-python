@@ -4,6 +4,7 @@
     3) 태그 중에서 우리가 찾는 조건에 맞는 데이터만 가져옴
     4) 마지막 페이지까지 반복함
 '''
+import pandas as pd
 import bs4
 import requests
 
@@ -42,3 +43,8 @@ print(len(price_list))
 
 print(date_list)
 print(price_list)
+
+df = pd.DataFrame({"date": date_list, "price": price_list})
+print(df)
+
+df.to_excel("KPI200.xlsx", index=False)
